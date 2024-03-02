@@ -16,9 +16,17 @@ int main() {
     // Program Listener
     std::cout << "###### Started listening ######\n";
     while(true) {
+
+        // Ref eating
         if (GetAsyncKeyState(VK_UP) & 0x8001) {
             eatRef();
-        } else if(GetAsyncKeyState(VK_LEFT) & 0x8001) {
+
+        // Throwing fishing rod
+        } else if (GetAsyncKeyState(VK_DOWN) & 0x8001) {
+            throwRod();
+        }
+        // Alting
+        else if(GetAsyncKeyState(VK_LEFT) & 0x8001) {
             if(!PRESSED_ALTING){
                 // Suspend local minecraft process
                 SuspendProcess(target);
